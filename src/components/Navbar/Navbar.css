@@ -1,0 +1,263 @@
+.zomato-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nav-left {
+  flex: 0 0 auto;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: #1c1c1c;
+  cursor: pointer;
+  letter-spacing: -1px;
+}
+
+.nav-search-container {
+  flex: 1 1 auto;
+  max-width: 800px;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 0.5rem 1rem;
+  transition: box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.nav-search-container:focus-within {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-color: #d1d1d1;
+}
+
+.search-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 200px;
+}
+
+.search-location input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #1c1c1c;
+  width: 100%;
+  background: transparent;
+}
+
+.search-location input::placeholder {
+  color: #828282;
+}
+
+.search-divider {
+  width: 1px;
+  height: 20px;
+  background: #e8e8e8;
+  margin: 0 1rem;
+}
+
+.search-query {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex: 2;
+}
+
+.search-query input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #1c1c1c;
+  width: 100%;
+  background: transparent;
+}
+
+.search-query input::placeholder {
+  color: #828282;
+}
+
+.nav-right {
+  flex: 0 0 auto;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.user-profile:hover {
+  background: #f8f8f8;
+}
+
+.user-profile span {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #1c1c1c;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #aab6cd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .nav-search-container {
+    display: none; /* Mobile search will be a different component or hidden */
+  }
+  .zomato-navbar {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* User Profile Dropdown & Wrapper */
+.user-profile-wrapper {
+  position: relative;
+}
+
+.user-profile .chevron {
+  transition: transform 0.2s ease;
+}
+
+.user-profile .chevron.open {
+  transform: rotate(180deg);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 240px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  padding: 0.5rem 0;
+  z-index: 1000;
+  border: 1px solid #f0f0f0;
+}
+
+.dropdown-header {
+  padding: 1rem;
+}
+
+.dropdown-header strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #1c1c1c;
+  margin-bottom: 0.2rem;
+}
+
+.dropdown-header p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 0.5rem 0;
+}
+
+.dropdown-item {
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  color: #1c1c1c;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f8f8f8;
+}
+
+.dropdown-item.danger {
+  color: #ff3b3b;
+}
+
+.dropdown-item.danger:hover {
+  background: #fff5f5;
+}
+
+/* Location Selection Dropdown */
+.search-location {
+  position: relative;
+  cursor: pointer;
+}
+
+.location-input {
+  cursor: pointer;
+}
+
+.search-location .chevron {
+  transition: transform 0.2s ease;
+}
+
+.search-location .chevron.open {
+  transform: rotate(180deg);
+}
+
+.location-dropdown {
+  position: absolute;
+  top: 130%;
+  left: -20px;
+  width: 200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  padding: 0.5rem 0;
+  z-index: 1000;
+  border: 1px solid #f0f0f0;
+}
+
+.location-option {
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #1c1c1c;
+  transition: background 0.2s ease;
+}
+
+.location-option:hover {
+  background: #f8f8f8;
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
